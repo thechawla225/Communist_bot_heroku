@@ -10,7 +10,7 @@ app = Flask(__name__)
 global bot
 global TOKEN
 TOKEN = "1873676859:AAFB8UY732ubRu38lcQzbvqMQRncPDLexOg"
-URL = "Heroku link to be created later"
+URL = "https://nitemode.herokuapp.com"
 
 bot = telegram.Bot("1873676859:AAFB8UY732ubRu38lcQzbvqMQRncPDLexOg")
 banhammer_gif = "https://tenor.com/JZWk.gif"
