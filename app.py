@@ -91,11 +91,7 @@ def set_webhook():
         return "webhook setup failed"
 
 
-@app.route('/')
-def index():
-    return '.'
-
-
+@app.route('/', methods=['GET', 'POST'])
 def main():
     print("main called")
     updater = Updater(TOKEN, use_context=True)
