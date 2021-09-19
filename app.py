@@ -5,6 +5,9 @@ import telegram
 from telegram import *
 import time
 
+import os
+PORT = int(os.environ.get('PORT', 5000))
+
 app = Flask(__name__)
 
 global bot
@@ -107,7 +110,8 @@ def main():
     dp.add_handler(CommandHandler("banhammer", banHammer))
     dp.add_handler(MessageHandler(Filters.text, handle_message))
     dp.add_error_handler(error)
-    updater.start_polling()
+    updater.start_webhook(listen="0.0.0.0", port=int(PORT), url_path=TOKEN)
+    updater.bot.setWebhook('https://olgabot.herokuapp.com/' + TOKEN)
     updater.idle()
 
 
