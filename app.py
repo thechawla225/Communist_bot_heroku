@@ -64,6 +64,8 @@ def banHammer(update, context):
 
 
 def handle_message(update, context):
+    print("** Handling message **")
+    print(str(update.message.text))
     text = str(update.message.text).lower()
     if(update.message.chat.type != "supergroup" and update.message.chat.type != "group"):
         chatid = update.message.chat_id
@@ -91,7 +93,6 @@ def set_webhook():
         return "webhook setup failed"
 
 
-@app.route('/', methods=['GET', 'POST'])
 def main():
     print("main called")
     updater = Updater(TOKEN, use_context=True)
@@ -106,4 +107,5 @@ def main():
 
 
 if __name__ == '__main__':
+    main()
     app.run(threaded=True)
