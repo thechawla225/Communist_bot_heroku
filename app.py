@@ -93,6 +93,11 @@ def set_webhook():
         return "webhook setup failed"
 
 
+@app.route('/')
+def index():
+    return "Olga Bot Started"
+
+
 def main():
     print("main called")
     updater = Updater(TOKEN, use_context=True)
